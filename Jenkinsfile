@@ -34,10 +34,9 @@ pipeline{
         }
 		stage('Upload Jar to Nexus'){
             steps{
-                scirpt{
-                    sh 'mvn --version'                                                      
-                    nexusArtifactUploader artifacts: [
-                     [
+                sh 'mvn --version'                                                      
+                nexusArtifactUploader artifacts: [
+                    [
                         artifactId: 'nexus_pipeline',
                         classifier: '',
                         file: "target/nexus_pipeline-${mavenPom.version}.jar",
@@ -53,7 +52,7 @@ pipeline{
                     version: "${mavenPom.version}" 
 
                     
-                }
+                
             }
         }
         
