@@ -9,8 +9,7 @@ http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <artifactId>nexus_pipeline</artifactId>  
   <version>2.0</version>  
   <packaging>jar</packaging>  
-  
-  <name>Maven Quick Start Archetype</name>  
+    <name>nexus_pipeline</name>  
   <url>http://maven.apache.org</url>  
   
   <dependencies>  
