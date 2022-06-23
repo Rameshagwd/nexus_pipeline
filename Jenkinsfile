@@ -34,7 +34,8 @@ pipeline{
         }
 		stage('Upload Jar to Nexus'){
             steps{
-                def mavenPom = readMavenPom file: 'pom.xml'                                                      
+                script {
+                pom = readMavenPom file: 'pom.xml'                                                      
                 nexusArtifactUploader artifacts: [
                 [
                 artifactId: 'nexus_pipeline',
@@ -53,7 +54,8 @@ pipeline{
                 repository: 'release-repo',
                 version: "${mavenPom.version}" 
 
-                    
+                }
+                                 
                 
             }
         }
