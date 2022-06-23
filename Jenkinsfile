@@ -35,7 +35,7 @@ pipeline{
 		stage('Upload Jar to Nexus'){
             steps{
                 scirpt{
-                 def mavenpom = readMavenPom file: 'pom.xml'
+                    def pom = readMavenPom file: 'pom.xml'                                     
                  nexusArtifactUploader artifacts: [
                      [
                         artifactId: 'nexus_pipeline',
@@ -48,7 +48,7 @@ pipeline{
                     groupId: 'com.javatpoint.application1',
                     nexusUrl: '10.32.39.203:8081',
                     nexusVersion: 'nexus3',
-                    protocal: 'http',
+                    protocol: 'http',
                     repository: 'release-repo',
                     version: "${mavenPom.version}" 
 
