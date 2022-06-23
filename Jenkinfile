@@ -3,7 +3,7 @@ pipeline{
         stages{
 		stage('Git Clone'){
             steps{
-                git branch: 'main', url: 'https://github.com/Rameshagwd/Devops.git'
+                git branch: 'main', url: 'https://github.com/Rameshagwd/nexus_pipeline.git'
             }
         }
 		stage('MVN Clen'){
