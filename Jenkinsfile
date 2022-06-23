@@ -40,7 +40,7 @@ pipeline{
                         [
                              artifactId: 'nexus_pipeline',
                              classifier: '',
-                             file: "target/nexus_pipeline-${mavenPom.version}.jar",
+                             file: "target/nexus_pipeline-${pom.version}.jar",
                              type: 'jar'
                         ]
 
@@ -52,7 +52,7 @@ pipeline{
                     nexusVersion: 'nexus3',
                     protocol: 'http',
                     repository: 'release-repo',
-                    version: "${mavenPom.version}" 
+                    version: "${pom.version}" 
 
                 }
                                  
