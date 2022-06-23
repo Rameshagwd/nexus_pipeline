@@ -35,24 +35,24 @@ pipeline{
 		stage('Upload Jar to Nexus'){
             steps{
                 script {
-                def = readMavenPom file: 'pom.xml'                                                      
-                nexusArtifactUploader artifacts: [
-                    [
-                        artifactId: 'nexus_pipeline',
-                        classifier: '',
-                        file: "target/nexus_pipeline-${mavenPom.version}.jar",
-                        type: 'jar'
-                    ]
+                    def = readMavenPom file: 'pom.xml'                                                      
+                    nexusArtifactUploader artifacts: [
+                        [
+                             artifactId: 'nexus_pipeline',
+                             classifier: '',
+                             file: "target/nexus_pipeline-${mavenPom.version}.jar",
+                             type: 'jar'
+                        ]
 
-                ],
+                    ],
 
-                credentialsId: 'nexus3',
-                groupId: 'com.javatpoint.application1',
-                nexusUrl: '10.32.39.203:8081',
-                nexusVersion: 'nexus3',
-                protocol: 'http',
-                repository: 'release-repo',
-                version: "${mavenPom.version}" 
+                    credentialsId: 'nexus3',
+                    groupId: 'com.javatpoint.application1',
+                    nexusUrl: '10.32.39.203:8081',
+                    nexusVersion: 'nexus3',
+                    protocol: 'http',
+                    repository: 'release-repo',
+                    version: "${mavenPom.version}" 
 
                 }
                                  
