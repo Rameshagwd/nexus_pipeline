@@ -37,12 +37,12 @@ pipeline{
                 script {
                 pom = readMavenPom file: 'pom.xml'                                                      
                 nexusArtifactUploader artifacts: [
-                [
-                artifactId: 'nexus_pipeline',
-                classifier: '',
-                file: "target/nexus_pipeline-${mavenPom.version}.jar",
-                type: "jar"
-                ]
+                    [
+                        artifactId: 'nexus_pipeline',
+                        classifier: '',
+                        file: "target/nexus_pipeline-${mavenPom.version}.jar",
+                        type: 'jar'
+                    ]
 
                 ],
 
