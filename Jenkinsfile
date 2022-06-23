@@ -47,7 +47,7 @@ pipeline{
 
                     ],
 
-                    credentialsId: 'jenkins',
+                    credentialsId: 'admin',
                     groupId: 'com.javatpoint.application1',
                     nexusUrl: '10.32.39.203:8081',
                     nexusVersion: 'nexus3',
