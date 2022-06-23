@@ -38,6 +38,7 @@ pipeline{
                     pom = readMavenPom file: 'pom.xml'                                                      
                     nexusArtifactUploader artifacts: [
                         [
+                             
                              artifactId: 'nexus_pipeline',
                              classifier: '',
                              file: "target/nexus_pipeline-${pom.version}.jar",
@@ -46,7 +47,7 @@ pipeline{
 
                     ],
 
-                    credentialsId: 'nexus3',
+                    credentialsId: 'nexus',
                     groupId: 'com.javatpoint.application1',
                     nexusUrl: '10.32.39.203:8081',
                     nexusVersion: 'nexus3',
