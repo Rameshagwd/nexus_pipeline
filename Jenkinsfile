@@ -36,20 +36,22 @@ pipeline{
             steps{
                 sh 'mvn --version'                                                      
                 nexusArtifactUploader artifacts: [
-                    [
-                        artifactId: 'nexus_pipeline',
-                        classifier: '',
-                        file: "target/nexus_pipeline-${mavenPom.version}.jar",
-                        type: "jar"
-                        ]
-                    ],
-                    credentialsId: 'nexus',
-                    groupId: 'com.javatpoint.application1',
-                    nexusUrl: '10.32.39.203:8081',
-                    nexusVersion: 'nexus3',
-                    protocol: 'http',
-                    repository: 'release-repo',
-                    version: "${mavenPom.version}" 
+                [
+                artifactId: 'nexus_pipeline',
+                classifier: '',
+                file: "target/nexus_pipeline-${mavenPom.version}.jar",
+                type: "jar"
+                ]
+
+                ],
+
+                credentialsId: 'nexus',
+                groupId: 'com.javatpoint.application1',
+                nexusUrl: '10.32.39.203:8081',
+                nexusVersion: 'nexus3',
+                protocol: 'http',
+                repository: 'release-repo',
+                version: "${mavenPom.version}" 
 
                     
                 
