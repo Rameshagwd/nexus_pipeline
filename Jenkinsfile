@@ -35,7 +35,7 @@ pipeline{
 		stage('Upload Jar to Nexus'){
             steps{
                 script {
-                pom = readMavenPom file: 'pom.xml'                                                      
+                def = readMavenPom file: 'pom.xml'                                                      
                 nexusArtifactUploader artifacts: [
                     [
                         artifactId: 'nexus_pipeline',
